@@ -1,0 +1,152 @@
+<div class="jumbotron">
+    <h1 class="display-4">Cartelera</h1>
+    <p class="lead">Peliculas en cartelera en los cines de todo el mundo.</p>
+    <hr class="my-4">
+    <div class="container gallery-container">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/movie',cartelera.results[0].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[0].poster_path +')' }">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[1].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[1].poster_path +')' }">
+                    </div>
+                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[2].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[2].poster_path +')' }">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+
+                <div class="row">
+                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[3].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[3].poster_path +')' }">
+                    </div>
+                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[4].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[4].poster_path +')' }">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/movie',cartelera.results[5].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[5].poster_path +')' }">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <br>
+    <h1 class="display-4">Populares</h1>
+    <p class="lead">Peliculas mas populares en la actualidad.</p>
+    <hr class="my-4">
+    <div class="container gallery-container">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+populares.results[0].poster_path +')' }">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+populares.results[1].poster_path +')' }">
+                    </div>
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+populares.results[2].poster_path +')' }">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+
+                <div class="row">
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+populares.results[3].poster_path +')' }">
+                    </div>
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+populares.results[4].poster_path +')' }">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+populares.results[5].poster_path +')' }">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <br>
+    <h1 class="display-4">Populares entre los niños</h1>
+    <p class="lead">Peliculas mas populares en la actualidad para niños.</p>
+    <hr class="my-4">
+    <div class="container gallery-container">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+popularesNinios.results[0].poster_path +')' }">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+popularesNinios.results[1].poster_path +')' }">
+                    </div>
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+popularesNinios.results[2].poster_path +')' }">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+
+                <div class="row">
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+popularesNinios.results[3].poster_path +')' }">
+                    </div>
+                    <div class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+popularesNinios.results[4].poster_path +')' }">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+popularesNinios.results[5].poster_path +')' }">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+</div>

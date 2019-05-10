@@ -1,0 +1,26 @@
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning" *ngIf="pelicula.total_results===0" role="alert">
+                No se encontraron resultados.
+            </div>
+        </div>
+
+        <div *ngFor="let movie of pelicula.results" class="col-md-4 mt-3">
+            <div class="card" style="width: 18rem;">
+
+                <img class="card-img-top" [src]="(movie.poster_path == null ? null:'http://image.tmdb.org/t/p/w500/'+movie.poster_path +'') | controlaUrlPoster: 'url'" alt="Card image cap">
+                <!-- <img src="../../../assets/imagenes/noimage.jpg" alt=""> -->
+                <div class="card-body">
+                    <h5 class="card-title"> {{ movie.title }} </h5>
+                    <p class="card-text">{{ movie.overview }}.</p>
+                    <button [routerLink]="['/movie',movie.id]" type="button" class="btn btn-block btn-outline-primary">
+                        Ver
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
