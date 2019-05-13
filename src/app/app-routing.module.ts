@@ -19,8 +19,9 @@ const appRoutes: Routes = [
 ];
 
 
+// @ts-ignore
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
   exports: [RouterModule],
   providers: []
 })
