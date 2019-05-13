@@ -6,20 +6,18 @@ import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl
 export class ControlaUrlPosterPipe implements PipeTransform {
   constructor(protected sanitizer: DomSanitizer) {}
 
-  public transform(value: any, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
-    switch (type) {
-			case 'html': return this.sanitizer.bypassSecurityTrustHtml(value);
-			case 'style': return this.sanitizer.bypassSecurityTrustStyle(value);
-			case 'script': return this.sanitizer.bypassSecurityTrustScript(value);
-			case 'url': {
-        if ( value == null) {
-          return '../../../assets/imagenes/noimage.jpg';
-        }
-        return this.sanitizer.bypassSecurityTrustUrl(value);
-      }
-			case 'resourceUrl': return this.sanitizer.bypassSecurityTrustResourceUrl(value);
-			default: throw new Error(`Invalid safe type specified: ${type}`);
-		}
+  public transform(pelicula: any, poster: boolean = false) {
+    if (poster) {
+      return 'http://image.tmdb.org/t/p/w500/' + pelicula.poster_path;
+    }
+
+    if (pelicula.backdrop_path) {
+      return 'http://image.tmdb.org/t/p/w500/' + pelicula.backdrop_path;
+    } else if (pelicula.poster_path ) {
+      return 'http://image.tmdb.org/t/p/w500/' + pelicula.poster_path;
+    } else {
+      return '../../../assets/imagenes/noimage.jpg';
+    }
   }
 
 }

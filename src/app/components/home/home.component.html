@@ -1,54 +1,19 @@
 <div class="jumbotron">
-    <h1 class="display-4">Cartelera</h1>
-    <p class="lead">Peliculas en cartelera en los cines de todo el mundo.</p>
-    <hr class="my-4">
-    <div class="container gallery-container">
-
-        <div class="row">
-
-            <div class="col-sm-6">
-
-                <div class="row">
-                    <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/movie',cartelera.results[0].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[0].poster_path +')' }">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[1].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[1].poster_path +')' }">
-                    </div>
-                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[2].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[2].poster_path +')' }">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-sm-6">
-
-
-                <div class="row">
-                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[3].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[3].poster_path +')' }">
-                    </div>
-                    <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/movie',cartelera.results[4].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[4].poster_path +')' }">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/movie',cartelera.results[5].id]" [ngStyle]="{ 'background-image':  'url( http://image.tmdb.org/t/p/w500/'+cartelera.results[5].poster_path +')' }">
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-
-        </div>
-
-
+    <div class="container">
+        <h1 class="display-4">Movies App</h1>
+        <p class="lead">Esta es una aplicacion de pelis.</p>
     </div>
+</div>
+<div class="container gallery-container">
 
-    <br>
+    <app-galeria titulo="Peliculas en cartelera" [peliculas]='cartelera'></app-galeria>
+
+    <app-galeria titulo="Peliculas populares" [peliculas]='populares'></app-galeria>
+
+    <app-galeria titulo="Peliculas de kids populares" [peliculas]='popularesNinios'></app-galeria>
+</div>
+
+<!-- <br>
     <h1 class="display-4">Populares</h1>
     <p class="lead">Peliculas mas populares en la actualidad.</p>
     <hr class="my-4">
@@ -147,6 +112,4 @@
         </div>
 
 
-    </div>
-
-</div>
+    </div> -->

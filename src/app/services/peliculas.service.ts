@@ -12,6 +12,8 @@ export class PeliculasService {
 private apiKey = '2299dc6da6cc72d2d784c911618f835e';
 private urlMovieDb = 'https://api.themoviedb.org/3';
 
+// tslint:disable-next-line:ban-types
+peliculas: Object = [];
 
   constructor(private http: HttpClient) {
 
@@ -29,7 +31,7 @@ return this.http.jsonp(url, 'JSONP_CALLBACK').pipe<any>( map((res) => res) );
 
     getPopularesNinios(): any {
     // tslint:disable-next-line:max-line-length
-    const url = `${this.urlMovieDb}/movie/popular?api_key=${this.apiKey}&language=es&certification_country=US&certification.lte=G&sort_by=popularity.desc&callback=JSONP_CALLBACK`;
+    const url = `${this.urlMovieDb}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&callback=JSONP_CALLBACK&api_key=${this.apiKey}&language=es`;
     return this.http.jsonp(url, 'JSONP_CALLBACK').pipe<any>( map((res) => res) );
         }
     getPeliculaById(id: string) {
@@ -41,6 +43,10 @@ return this.http.jsonp(url, 'JSONP_CALLBACK').pipe<any>( map((res) => res) );
     buscarPelicula(keyword: string) {
       // tslint:disable-next-line:max-line-length
    const url = `${this.urlMovieDb}/search/movie?query=${keyword}&api_key=${this.apiKey}&callback=JSONP_CALLBACK&language=es`;
-   return this.http.jsonp(url, 'JSONP_CALLBACK').pipe<any>( map((res) => res) );
+   return this.http.jsonp(url, 'JSONP_CALLBACK').pipe<any>( map((res) => {
+
+                                                                           this.peliculas = res;
+                                                                           return res;
+                                                                          }) );
    }
 }

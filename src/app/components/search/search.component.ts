@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { PeliculasService } from '../../services/peliculas.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router, Params} from '@angular/router';
+import {PeliculasService} from '../../services/peliculas.service';
 
 @Component({
   selector: 'app-search',
@@ -9,35 +9,29 @@ import { PeliculasService } from '../../services/peliculas.service';
 })
 export class SearchComponent implements OnInit {
 
-  pelicula: any;
-  constructor(private route: ActivatedRoute, private service: PeliculasService, private router: Router) {
-  this.buscarPeliculas();
-   }
 
-   buscarPeliculas() {
-     const busqueda = this.route.snapshot.paramMap.get('param');
-     console.log(busqueda);
-     if (busqueda !== '') {
-      this.pelicula = this.service.buscarPelicula(busqueda)
-                                    .subscribe(
-                                      data => {this.pelicula = data;
-                                               console.log(this.pelicula);
-                                              }
-                                    );
-    }
-   }
+  buscar = '';
+
+  constructor(private route: ActivatedRoute, public service: PeliculasService, private router: Router) {
+    route.params.subscribe(data => {
+      if (data.texto) {
+        this.buscar = data.texto;
+        this.buscarPelicula();
+      }
+    });
+  }
 
   ngOnInit() {
-this.route.params.subscribe((params: any) => {
-  if (params.param !== '') {
-    this.pelicula = this.service.buscarPelicula(params.param)
-  .subscribe(
-    data => {this.pelicula = data;
-             console.log(this.pelicula);
-            }
-  );
+
   }
-});
+
+  buscarPelicula() {
+    if (this.buscar.length == 0) {
+      return;
+    }
+
+    this.service.buscarPelicula(this.buscar)
+      .subscribe(data => console.log(data));
   }
 
 }

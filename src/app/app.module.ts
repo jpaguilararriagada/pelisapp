@@ -10,7 +10,8 @@ import { MovieComponent } from './components/movie/movie.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ControlaUrlPosterPipe } from './pipes/controla-url-poster.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { GaleriaComponent } from './components/home/galeria.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +19,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SearchComponent,
     MovieComponent,
     ControlaUrlPosterPipe,
-    NavbarComponent
+    NavbarComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
