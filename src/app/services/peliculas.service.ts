@@ -13,7 +13,7 @@ private apiKey = '2299dc6da6cc72d2d784c911618f835e';
 private urlMovieDb = 'https://api.themoviedb.org/3';
 
 // tslint:disable-next-line:ban-types
-peliculas: Object = [];
+peliculas: any = [];
 
   constructor(private http: HttpClient) {
 
