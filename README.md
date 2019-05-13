@@ -1,7 +1,10 @@
+# Demo
+
+https://jpaguilararriagada.github.io/pelisapp/
 
 # PelisApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+Este proyecto fue realizado con el proposito de aprender las cosas basicas de Angular tales como el uso de Forms, validaciones , enrutamiento, interfaces, HttpClient, Jsonp, consultas a api de themoviedb , etc...
 
 ## Development server
 
